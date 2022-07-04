@@ -6,5 +6,6 @@
 /src/extra
 /src/__pycache__/*
 /mypackage.zip
+/src/get_stack.py
 /src/config.py
-/template.yaml
+/src/mystack.json
