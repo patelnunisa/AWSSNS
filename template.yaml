@@ -64,3 +64,33 @@ Resources:
         - 'arn:aws:lambda:us-east-1:898534877678:layer:pymysql_layer:1'
   SNSTopicRecieved:
     Type: 'AWS::SNS::Topic'
+  sucessRateLambada:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.9
+      CodeUri: .
+      Description: ''
+      MemorySize: 128
+      Timeout: 3
+      Role: >-
+        arn:aws:iam::898534877678:role/service-role/sucessRateLambada-role-fichxrze
+      Events:
+        SNS1:
+          Type: SNS
+          Properties:
+            Topic:
+              Ref: SNSTopicSuccessRate
+      VpcConfig:
+        SecurityGroupIds:
+          - sg-0ee9fae91e6b1545b
+          - sg-0054013568a3a81af
+        SubnetIds:
+          - subnet-08e2ef243c29b3249
+          - subnet-040d5176084377e1f
+          - subnet-01f565dbd127ea0d6
+          - subnet-0e323d2637443d680
+          - subnet-0da85781b8ac6ad18
+          - subnet-0fa07fe10136c0287
+  SNSTopicSuccessRate:
+    Type: 'AWS::SNS::Topic'
