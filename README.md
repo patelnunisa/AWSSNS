@@ -20,6 +20,18 @@ The project aims to showcase how to trigger events and ingest data through aws s
 - RECEIVED_ARN ='arn:aws:sns:us-east-1::***********::recieved'
 - SUCCESSRATE_ARN ='arn:aws:sns:us-east-1::***********::successRate'
 
+## Lambda function
+### attempts
+Create lambda function attemptLambda that triggers by attempt SNS
+![image](https://user-images.githubusercontent.com/77594565/177065790-d292335f-aa65-45f1-9835-ee09581143e8.png)
+### recieved
+Create lambda function receivedtLambda that triggers by recieved SNS and the destination is success rate SNS
+![image](https://user-images.githubusercontent.com/77594565/177065883-d154fb7f-9b25-401c-89af-b049ec8aa9d8.png)
+### success rate
+Create lambda function successRatetLambda that triggers by success rate SNS
+![image](https://user-images.githubusercontent.com/77594565/177065919-d2995724-a23b-4514-a1c1-6224724cd93e.png)
+
+
 ## Steps
 - create Config.py file with all required credentials
 - run init.py to create topics
